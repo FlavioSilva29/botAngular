@@ -1,12 +1,11 @@
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <div class="row align-items-center justify-content-center mw-10 mh-20">
     <div class="col-lg-8">
       <ul #scrollMe class="messages">
         <div *ngFor="let msg of resultados ">
           <li class="message appeared" [ngClass]="{'left':msg.remetente === 'bot',
-                        'right':msg.remetente === 'eu'     }">
+                        'right':msg.remetente === 'eu'}">
             <div class="avatar"></div>
             <div class="text_wrapper">
               <div class="text">
@@ -22,22 +21,11 @@
 
   <div class="row align-items-center justify-content-center">
     <div class="col-sm-6">
-      <input type="text" class="form-control " (keyup.enter)="sendMessage()" [(ngModel)]="msg" />
-    </div>
-    <div class="col-sm-2">
-      <button class="btn btn-success sendbtn" (click)="sendMessage()"><i class="far fa-share-square"></i> Enviar</button>
-    </div>
+      <input mat-input type="text" (keyup.enter)="sendMessage()" [(ngModel)]="msg" />
+      <hr>
+    
+      <button style="width:100%" mat-button color ="primary"(click)="sendMessage()">Enviar</button>
+    
   </div>
 
 
-<mat-card>
-  <mat-card-content>
-    <mat-list #scrollMe>
-      <mat-list-item *ngFor="let msg of resultados">
-     
-        <p>{{msg.mensagem}}</p><br>
-        
-      </mat-list-item>
-    </mat-list>
-  </mat-card-content>
-</mat-card>
