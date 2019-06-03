@@ -5,7 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 })
 export class BotService {
   private baseURL:string = "https://api.dialogflow.com/v1/query?v=20150910"
-  private token: string = 'e596956372df4b57b0ee36dd88bf6b52' 
+  private token: string = 'ca8888813d7e48ca929100af8f4acf21' 
   
   constructor(private http: HttpClient) { }
 
